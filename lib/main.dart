@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triplane/ui/pages/bonus_page.dart';
 import 'package:triplane/ui/pages/get_started_page.dart';
 import 'package:triplane/ui/pages/sign_up_page.dart';
 import 'package:triplane/ui/pages/splash_page.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashPage(),
         '/get-started': (context) => GetStartedPage(),
         '/sign-up': (context) => SignUpPage(),
+        '/bonus': (context) => BonusPage(),
       },
     );
   }
