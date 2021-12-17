@@ -28,6 +28,7 @@ class BonusPage extends StatelessWidget {
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -63,10 +64,86 @@ class BonusPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+                Text(
+                  'Pay',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
                 )
               ],
-            )
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Text(
+              'Balance',
+              style: whiteTextStyle.copyWith(
+                fontWeight: light,
+              ),
+            ),
+            Text(
+              'IDR 280.000.000',
+              style: whiteTextStyle.copyWith(
+                fontSize: 26,
+                fontWeight: bold,
+              ),
+            ),
           ],
+        ),
+      );
+    }
+
+    Widget title() {
+      return Container(
+        margin: EdgeInsets.only(top: 80),
+        child: Text(
+          'Big Bonus 🎉',
+          style: blackTextStyle.copyWith(
+            fontSize: 32,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget subtitle() {
+      return Container(
+        margin: EdgeInsets.only(top: 10),
+        child: Text(
+          'We give you early credit so that\nyou can buy a flight ticket',
+          style: grayTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      );
+    }
+
+    Widget startButton() {
+      return Container(
+        margin: EdgeInsets.only(top: 50),
+        height: 55,
+        width: 250,
+        child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                defaultRadius,
+              ),
+            ),
+          ),
+          child: Text(
+            'Start Fly Now',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+            ),
+          ),
         ),
       );
     }
@@ -78,6 +155,9 @@ class BonusPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             bonusCard(),
+            title(),
+            subtitle(),
+            startButton(),
           ],
         ),
       ),
