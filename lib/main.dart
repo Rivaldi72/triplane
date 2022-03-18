@@ -4,7 +4,7 @@ import 'package:triplane/ui/pages/get_started_page.dart';
 import 'package:triplane/ui/pages/sign_up_page.dart';
 import 'package:triplane/ui/pages/splash_page.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => SplashPage(),
-        '/get-started': (context) => GetStartedPage(),
-        '/sign-up': (context) => SignUpPage(),
-        '/bonus': (context) => BonusPage(),
+        '/': (context) => const SplashPage(),
+        '/get-started': (context) => const GetStartedPage(),
+        '/sign-up': (context) => const SignUpPage(),
+        '/bonus': (context) => const BonusPage(),
       },
     );
   }
