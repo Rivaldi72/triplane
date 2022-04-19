@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:triplane/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
+import 'package:intl/intl.dart';
 
-class BonusPage extends StatelessWidget {
+class BonusPage extends StatefulWidget {
   const BonusPage({Key? key}) : super(key: key);
+
+  @override
+  State<BonusPage> createState() => _BonusPageState();
+}
+
+class _BonusPageState extends State<BonusPage> {
+  int balance = 0;
+
+  void getBalance() {
+    setState(() {
+      balance = 100000000;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +99,7 @@ class BonusPage extends StatelessWidget {
               ),
             ),
             Text(
-              'IDR 280.000.000',
+              NumberFormat.currency(locale: 'id').format(balance),
               style: whiteTextStyle.copyWith(
                 fontSize: 26,
                 fontWeight: medium,
@@ -134,6 +148,17 @@ class BonusPage extends StatelessWidget {
       );
     }
 
+    Widget topUpButton() {
+      return CustomButton(
+        width: 220,
+        margin: const EdgeInsets.only(top: 50),
+        title: 'Get Balance',
+        onPressed: () {
+          getBalance();
+        },
+      );
+    }
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Center(
@@ -144,6 +169,7 @@ class BonusPage extends StatelessWidget {
             title(),
             subtitle(),
             startButton(),
+            topUpButton(),
           ],
         ),
       ),
